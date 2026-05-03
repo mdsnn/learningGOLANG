@@ -2,22 +2,24 @@ package main
 
 import "fmt"
 
-type User struct {
-	ID    int
-	Name  string
-	Email string
+type Product struct {
+	ID      int
+	Name    string
+	Price   string
+	InStock bool
 }
 
-func (u User) DisplayName() string {
-	return u.Name + " <" + u.Email + ">"
+func (p Product) Label() string {
+	return p.Name + " ->" + p.Price + ">"
 }
 
 func main() {
-	user := User{
-		ID:    1,
-		Name:  "Alex",
-		Email: "alex@example.com",
+	product := Product{
+		ID:      1,
+		Name:    "laptop",
+		Price:   "1200",
+		InStock: true,
 	}
 
-	fmt.Println(user.DisplayName())
+	fmt.Println(product.Label())
 }

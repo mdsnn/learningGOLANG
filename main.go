@@ -10,7 +10,7 @@ type Product struct {
 }
 
 func (p Product) Label() string {
-	return p.Name + " ->" + p.Price + ">"
+	return p.Name + " -" + "$" + p.Price
 }
 
 func main() {
